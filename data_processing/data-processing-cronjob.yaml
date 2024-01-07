@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: data-processing-cronjob
+spec:
+  schedule: "0 * * * *"  # Расписание запуска: каждый час
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: data-processing-container
+              image: data-processing-service:v1
+              command: ["./data-processing"]
+          restartPolicy: OnFailure

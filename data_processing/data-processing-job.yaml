@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: data-processing-job
+spec:
+  template:
+    metadata:
+      name: data-processing-job
+    spec:
+      containers:
+        - name: data-processing-container
+          image: data-processing-service:v1
+          command: ["./data-processing"]
+      restartPolicy: OnFailure
