@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: data-processing-configmap
 data:
-  config.yml: |
-    option1: value1
-    option2: value2
+  DATABASE_URL: "http://database.url"
+  OTHER_SERVICE_URL: "http://service.url"
+  AUTH_SERVICE_URL: "http://auth-service.example.com:8000"
+  INVENTORY_SERVICE_URL: "http://inventory-service.example.com:8080"
+  MESSAGE_QUEUE_URL: "amqp://messaging.example.com:5672"

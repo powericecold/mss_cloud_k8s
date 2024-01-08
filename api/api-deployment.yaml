@@ -25,6 +25,31 @@ spec:
             memory: "4Gi"
             cpu: "1"
         env:
+        - name: AUTH_SERVICE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: api-configmap
+              key: AUTH_SERVICE_URL
+        - name: INVENTORY_SERVICE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: api-configmap
+              key: INVENTORY_SERVICE_URL
+        - name: MESSAGE_QUEUE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: api-configmap
+              key: MESSAGE_QUEUE_URL
+        - name: OTHER_SERVICE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: api-configmap
+              key: OTHER_SERVICE_URL
+        - name: DATABASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: api-configmap
+              key: DATABASE_URL
         - name: DB_HOST
           valueFrom:
             secretKeyRef:

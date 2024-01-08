@@ -24,3 +24,9 @@ spec:
             limits:
               memory: "2Gi"
               cpu: "1"
+        env:
+        - name: API_SERVICE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: web-interface-configmap
+              key: API_SERVICE_URL
