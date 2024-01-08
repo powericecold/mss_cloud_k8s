@@ -4,6 +4,8 @@ metadata:
   name: api-configmap
 data:
   DATABASE_URL: "http://database.url"
+  DB_HOST: "base64_encoded_host"
+  DB_USER: "base64_encoded_user"
   OTHER_SERVICE_URL: "http://service.url"
   AUTH_SERVICE_URL: "http://auth-service.example.com:8000"
   INVENTORY_SERVICE_URL: "http://inventory-service.example.com:8080"
